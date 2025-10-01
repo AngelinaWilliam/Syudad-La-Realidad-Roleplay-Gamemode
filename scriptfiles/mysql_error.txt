@@ -1,0 +1,1092 @@
+[2022-07-26 17:07]
+Error ID: 1146
+Callback: OnLoadDealershipCars
+Query: SELECT * FROM `rp_dealercars`
+[!] Table 'Free16.rp_dealercars' doesn't exist
+
+[2022-07-26 17:07]
+Error ID: 1146
+Callback: OnQueryFinished
+Query: SELECT * FROM `factionlockers`
+[!] Table 'Free16.factionlockers' doesn't exist
+
+[2022-07-26 17:07]
+Error ID: 1146
+Callback: OnQueryFinished
+Query: SELECT * FROM `rp_atms`
+[!] Table 'Free16.rp_atms' doesn't exist
+
+[2022-07-26 17:07]
+Error ID: 1146
+Callback: OnQueryFinished
+Query: SELECT * FROM mapicons
+[!] Table 'Free16.mapicons' doesn't exist
+
+[2022-07-26 17:07]
+Error ID: 1146
+Callback: OnLoadFurniture
+Query: SELECT * FROM `rp_furniture`
+[!] Table 'Free16.rp_furniture' doesn't exist
+
+[2022-07-26 17:07]
+Error ID: 1146
+Callback: Garage_Load
+Query: SELECT * FROM `publicgarage`
+[!] Table 'Free16.publicgarage' doesn't exist
+
+[2022-07-26 17:07]
+Error ID: 1146
+Callback: OnLoadBackpacks
+Query: SELECT * FROM `playerbackpack`
+[!] Table 'Free16.playerbackpack' doesn't exist
+
+[2022-07-26 17:22]
+Error ID: 1054
+Callback: 
+Query: INSERT INTO vehicles (ownerid, owner, modelid, pos_x, pos_y, pos_z, pos_a, plate, color1, color2, carImpounded) VALUES(11, 'Hashieru_Kimotoshi', 481, '1560.792', '-2325.345', '13.089', '86.58', '', 0, 0, '0')
+[!] Unknown column 'carImpounded' in 'field list'
+
+[2022-07-26 17:47]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET adminhide = 0, newbiemuted = 0, helpmuted = 0, admuted = 0, livemuted = 0, globalmuted = 0, reportmuted = 0, reportwarns = 0, fightstyle = 4, toggletextdraws = 0, toggleooc = 0, togglephone = 0, toggleadmin = 0, togglehelper = 0, togglenewbie = 0, togglewt = 0, togglevip = 0 WHERE uid = 11
+[!] Unknown column 'adminhide' in 'field list'
+
+[2022-07-26 17:47]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET pokertable = 0, totalpatients = 0, totalfires = 0, rarecooldown = 0 WHERE uid = 11
+[!] Unknown column 'pokertable' in 'field list'
+
+[2022-07-26 17:47]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET amcount = 0, brokenleg = 0, Garage = 0, refunded = 0 where uid = 11
+[!] Unknown column 'amcount' in 'field list'
+
+[2022-07-26 17:47]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET phoneload = 0, capacity = 35 where uid = 11
+[!] Unknown column 'phoneload' in 'field list'
+
+[2022-07-26 17:47]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET platinumvoucher = 0, silvervoucher = 0, diamondvoucher = 0, tikis = 0, customplate = 0, farm_time = 0 WHERE uid = 11
+[!] Unknown column 'platinumvoucher' in 'field list'
+
+[2022-07-26 17:53]
+Error ID: 1146
+Callback: OnLoadDealershipCars
+Query: SELECT * FROM `rp_dealercars`
+[!] Table 'Free16.rp_dealercars' doesn't exist
+
+[2022-07-26 17:53]
+Error ID: 1146
+Callback: OnQueryFinished
+Query: SELECT * FROM `factionlockers`
+[!] Table 'Free16.factionlockers' doesn't exist
+
+[2022-07-26 17:53]
+Error ID: 1146
+Callback: OnQueryFinished
+Query: SELECT * FROM `rp_atms`
+[!] Table 'Free16.rp_atms' doesn't exist
+
+[2022-07-26 17:53]
+Error ID: 1146
+Callback: OnQueryFinished
+Query: SELECT * FROM mapicons
+[!] Table 'Free16.mapicons' doesn't exist
+
+[2022-07-26 17:53]
+Error ID: 1146
+Callback: OnLoadFurniture
+Query: SELECT * FROM `rp_furniture`
+[!] Table 'Free16.rp_furniture' doesn't exist
+
+[2022-07-26 17:53]
+Error ID: 1146
+Callback: Garage_Load
+Query: SELECT * FROM `publicgarage`
+[!] Table 'Free16.publicgarage' doesn't exist
+
+[2022-07-26 17:53]
+Error ID: 1146
+Callback: OnLoadBackpacks
+Query: SELECT * FROM `playerbackpack`
+[!] Table 'Free16.playerbackpack' doesn't exist
+
+[2022-07-26 18:02]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET adminhide = 0, newbiemuted = 0, helpmuted = 0, admuted = 0, livemuted = 0, globalmuted = 0, reportmuted = 0, reportwarns = 0, fightstyle = 4, toggletextdraws = 0, toggleooc = 0, togglephone = 0, toggleadmin = 0, togglehelper = 0, togglenewbie = 0, togglewt = 0, togglevip = 0 WHERE uid = 11
+[!] Unknown column 'adminhide' in 'field list'
+
+[2022-07-26 18:02]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET pokertable = 0, totalpatients = 0, totalfires = 0, rarecooldown = 0 WHERE uid = 11
+[!] Unknown column 'pokertable' in 'field list'
+
+[2022-07-26 18:02]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET amcount = 0, brokenleg = 0, Garage = 0, refunded = 0 where uid = 11
+[!] Unknown column 'amcount' in 'field list'
+
+[2022-07-26 18:02]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET phoneload = 0, capacity = 35 where uid = 11
+[!] Unknown column 'phoneload' in 'field list'
+
+[2022-07-26 18:02]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET platinumvoucher = 0, silvervoucher = 0, diamondvoucher = 0, tikis = 0, customplate = 0, farm_time = 0 WHERE uid = 11
+[!] Unknown column 'platinumvoucher' in 'field list'
+
+[2022-07-26 23:32]
+Error ID: 1054
+Callback: 
+Query: INSERT INTO vehicles (ownerid, owner, modelid, pos_x, pos_y, pos_z, pos_a, plate, color1, color2, carImpounded) VALUES(12, 'Jeff_Yukihira', 481, '1560.792', '-2325.345', '13.089', '86.58', '', 0, 0, '0')
+[!] Unknown column 'carImpounded' in 'field list'
+
+[2022-07-26 23:33]
+Error ID: 1054
+Callback: OnQueryFinished
+Query: SELECT id, modelid, pos_x, pos_y, pos_z, world, impounded, broken FROM vehicles WHERE ownerid = 12
+[!] Unknown column 'broken' in 'field list'
+
+[2022-07-26 23:33]
+Error ID: 1054
+Callback: OnQueryFinished
+Query: SELECT id, modelid, pos_x, pos_y, pos_z, world, impounded, broken FROM vehicles WHERE ownerid = 12
+[!] Unknown column 'broken' in 'field list'
+
+[2022-07-26 23:33]
+Error ID: 1054
+Callback: OnQueryFinished
+Query: SELECT id, modelid, pos_x, pos_y, pos_z, world, impounded, broken FROM vehicles WHERE ownerid = 12
+[!] Unknown column 'broken' in 'field list'
+
+[2022-07-26 23:33]
+Error ID: 1054
+Callback: OnQueryFinished
+Query: SELECT id, modelid, pos_x, pos_y, pos_z, world, impounded, broken FROM vehicles WHERE ownerid = 12
+[!] Unknown column 'broken' in 'field list'
+
+[2022-07-26 23:35]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET adminhide = 0, newbiemuted = 0, helpmuted = 0, admuted = 0, livemuted = 0, globalmuted = 0, reportmuted = 0, reportwarns = 0, fightstyle = 4, toggletextdraws = 0, toggleooc = 0, togglephone = 0, toggleadmin = 0, togglehelper = 0, togglenewbie = 0, togglewt = 0, togglevip = 0 WHERE uid = 12
+[!] Unknown column 'adminhide' in 'field list'
+
+[2022-07-26 23:35]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET pokertable = 0, totalpatients = 0, totalfires = 0, rarecooldown = 0 WHERE uid = 12
+[!] Unknown column 'pokertable' in 'field list'
+
+[2022-07-26 23:35]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET amcount = 0, brokenleg = 0, Garage = 0, refunded = 0 where uid = 12
+[!] Unknown column 'amcount' in 'field list'
+
+[2022-07-26 23:35]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET phoneload = 0, capacity = 35 where uid = 12
+[!] Unknown column 'phoneload' in 'field list'
+
+[2022-07-26 23:35]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET platinumvoucher = 0, silvervoucher = 0, diamondvoucher = 0, tikis = 0, customplate = 0, farm_time = 0 WHERE uid = 12
+[!] Unknown column 'platinumvoucher' in 'field list'
+
+[2022-07-27 00:09]
+Error ID: 1054
+Callback: 
+Query: INSERT INTO vehicles (ownerid, owner, modelid, pos_x, pos_y, pos_z, pos_a, plate, color1, color2, carImpounded) VALUES(13, 'Angelo_Lyve_South', 481, '1560.792', '-2325.345', '13.089', '86.58', '', 0, 0, '0')
+[!] Unknown column 'carImpounded' in 'field list'
+
+[2022-07-27 00:11]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET adminhide = 0, newbiemuted = 0, helpmuted = 0, admuted = 0, livemuted = 0, globalmuted = 0, reportmuted = 0, reportwarns = 0, fightstyle = 4, toggletextdraws = 0, toggleooc = 0, togglephone = 0, toggleadmin = 0, togglehelper = 0, togglenewbie = 0, togglewt = 0, togglevip = 0 WHERE uid = 13
+[!] Unknown column 'adminhide' in 'field list'
+
+[2022-07-27 00:11]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET pokertable = 0, totalpatients = 0, totalfires = 0, rarecooldown = 0 WHERE uid = 13
+[!] Unknown column 'pokertable' in 'field list'
+
+[2022-07-27 00:11]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET amcount = 0, brokenleg = 0, Garage = 0, refunded = 0 where uid = 13
+[!] Unknown column 'amcount' in 'field list'
+
+[2022-07-27 00:11]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET phoneload = 0, capacity = 35 where uid = 13
+[!] Unknown column 'phoneload' in 'field list'
+
+[2022-07-27 00:11]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET platinumvoucher = 0, silvervoucher = 0, diamondvoucher = 0, tikis = 0, customplate = 0, farm_time = 0 WHERE uid = 13
+[!] Unknown column 'platinumvoucher' in 'field list'
+
+[2022-07-27 01:12]
+Error ID: 1054
+Callback: 
+Query: INSERT INTO vehicles (ownerid, owner, modelid, pos_x, pos_y, pos_z, pos_a, plate, color1, color2, carImpounded) VALUES(14, 'Leonel_Jacks', 481, '1560.792', '-2325.345', '13.089', '86.58', '', 0, 0, '0')
+[!] Unknown column 'carImpounded' in 'field list'
+
+[2022-07-27 01:14]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET adminhide = 0, newbiemuted = 0, helpmuted = 0, admuted = 0, livemuted = 0, globalmuted = 0, reportmuted = 0, reportwarns = 0, fightstyle = 4, toggletextdraws = 0, toggleooc = 0, togglephone = 0, toggleadmin = 0, togglehelper = 0, togglenewbie = 0, togglewt = 0, togglevip = 0 WHERE uid = 14
+[!] Unknown column 'adminhide' in 'field list'
+
+[2022-07-27 01:14]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET pokertable = 0, totalpatients = 0, totalfires = 0, rarecooldown = 0 WHERE uid = 14
+[!] Unknown column 'pokertable' in 'field list'
+
+[2022-07-27 01:14]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET amcount = 0, brokenleg = 0, Garage = 0, refunded = 0 where uid = 14
+[!] Unknown column 'amcount' in 'field list'
+
+[2022-07-27 01:14]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET phoneload = 0, capacity = 35 where uid = 14
+[!] Unknown column 'phoneload' in 'field list'
+
+[2022-07-27 01:14]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET platinumvoucher = 0, silvervoucher = 0, diamondvoucher = 0, tikis = 0, customplate = 0, farm_time = 0 WHERE uid = 14
+[!] Unknown column 'platinumvoucher' in 'field list'
+
+[2022-07-27 02:22]
+Error ID: 1054
+Callback: 
+Query: INSERT INTO vehicles (ownerid, owner, modelid, pos_x, pos_y, pos_z, pos_a, plate, color1, color2, carImpounded) VALUES(15, 'Toxic_Server', 481, '1560.792', '-2325.345', '13.089', '86.58', '', 0, 0, '0')
+[!] Unknown column 'carImpounded' in 'field list'
+
+[2022-07-27 02:23]
+Error ID: 1054
+Callback: OnQueryFinished
+Query: SELECT id, modelid, pos_x, pos_y, pos_z, world, impounded, broken FROM vehicles WHERE ownerid = 15
+[!] Unknown column 'broken' in 'field list'
+
+[2022-07-27 02:23]
+Error ID: 1054
+Callback: OnQueryFinished
+Query: SELECT id, modelid, pos_x, pos_y, pos_z, world, impounded, broken FROM vehicles WHERE ownerid = 15
+[!] Unknown column 'broken' in 'field list'
+
+[2022-07-27 02:23]
+Error ID: 1054
+Callback: OnQueryFinished
+Query: SELECT id, modelid, pos_x, pos_y, pos_z, world, impounded, broken FROM vehicles WHERE ownerid = 15
+[!] Unknown column 'broken' in 'field list'
+
+[2022-07-27 02:23]
+Error ID: 1054
+Callback: OnQueryFinished
+Query: SELECT id, modelid, pos_x, pos_y, pos_z, world, impounded, broken FROM vehicles WHERE ownerid = 15
+[!] Unknown column 'broken' in 'field list'
+
+[2022-07-27 02:49]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET adminhide = 0, newbiemuted = 0, helpmuted = 0, admuted = 0, livemuted = 0, globalmuted = 0, reportmuted = 0, reportwarns = 0, fightstyle = 4, toggletextdraws = 0, toggleooc = 0, togglephone = 0, toggleadmin = 0, togglehelper = 0, togglenewbie = 0, togglewt = 0, togglevip = 0 WHERE uid = 15
+[!] Unknown column 'adminhide' in 'field list'
+
+[2022-07-27 02:49]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET pokertable = 0, totalpatients = 0, totalfires = 0, rarecooldown = 0 WHERE uid = 15
+[!] Unknown column 'pokertable' in 'field list'
+
+[2022-07-27 02:49]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET amcount = 0, brokenleg = 0, Garage = 0, refunded = 0 where uid = 15
+[!] Unknown column 'amcount' in 'field list'
+
+[2022-07-27 02:49]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET phoneload = 0, capacity = 35 where uid = 15
+[!] Unknown column 'phoneload' in 'field list'
+
+[2022-07-27 02:49]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET platinumvoucher = 0, silvervoucher = 0, diamondvoucher = 0, tikis = 0, customplate = 0, farm_time = 0 WHERE uid = 15
+[!] Unknown column 'platinumvoucher' in 'field list'
+
+[2022-07-27 02:51]
+Error ID: 1054
+Callback: 
+Query: UPDATE businesses SET world = 3000011, biz_desc = 'Not4Sale', message = 'Welcome to {FFFFFF}Nobody\'s{32CD32} 7/11 (50000 Products left). Press \'N\' to purchase from this business.' WHERE id = 11
+[!] Unknown column 'biz_desc' in 'field list'
+
+[2022-07-27 02:51]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET paper = 1 WHERE uid = 15
+[!] Unknown column 'paper' in 'field list'
+
+[2022-07-27 02:51]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET paper = 2 WHERE uid = 15
+[!] Unknown column 'paper' in 'field list'
+
+[2022-07-27 02:52]
+Error ID: 1146
+Callback: OnPlayerListContacts
+Query: SELECT * FROM `rp_contacts` WHERE Phone = 990113
+[!] Table 'Free16.rp_contacts' doesn't exist
+
+[2022-07-27 02:52]
+Error ID: 1146
+Callback: OnPlayerListContacts
+Query: SELECT * FROM `rp_contacts` WHERE Phone = 990113
+[!] Table 'Free16.rp_contacts' doesn't exist
+
+[2022-07-27 02:52]
+Error ID: 1146
+Callback: OnPlayerListContacts
+Query: SELECT * FROM `rp_contacts` WHERE Phone = 990113
+[!] Table 'Free16.rp_contacts' doesn't exist
+
+[2022-07-27 02:52]
+Error ID: 1146
+Callback: OnPlayerListContacts
+Query: SELECT * FROM `rp_contacts` WHERE Phone = 990113
+[!] Table 'Free16.rp_contacts' doesn't exist
+
+[2022-07-27 02:52]
+Error ID: 1146
+Callback: OnPlayerListContacts
+Query: SELECT * FROM `rp_contacts` WHERE Phone = 990113
+[!] Table 'Free16.rp_contacts' doesn't exist
+
+[2022-07-27 02:52]
+Error ID: 1146
+Callback: OnPlayerListContacts
+Query: SELECT * FROM `rp_contacts` WHERE Phone = 990113
+[!] Table 'Free16.rp_contacts' doesn't exist
+
+[2022-07-27 02:53]
+Error ID: 1062
+Callback: OnInventoryAdd
+Query: INSERT INTO `inventory` (`ID`, `invID`, `invItem`, `invModel`, `invQuantity`) VALUES('15', '1', 'GPS System', '18875', '1')
+[!] Duplicate entry '1' for key 'PRIMARY'
+
+[2022-07-27 02:57]
+Error ID: 1054
+Callback: OnQueryFinished
+Query: SELECT id, modelid, pos_x, pos_y, pos_z, world, impounded, broken FROM vehicles WHERE ownerid = 15
+[!] Unknown column 'broken' in 'field list'
+
+[2022-07-27 02:59]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET adminhide = 0, newbiemuted = 0, helpmuted = 0, admuted = 0, livemuted = 0, globalmuted = 0, reportmuted = 0, reportwarns = 0, fightstyle = 4, toggletextdraws = 0, toggleooc = 0, togglephone = 0, toggleadmin = 0, togglehelper = 0, togglenewbie = 0, togglewt = 0, togglevip = 0 WHERE uid = 15
+[!] Unknown column 'adminhide' in 'field list'
+
+[2022-07-27 02:59]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET pokertable = 0, totalpatients = 0, totalfires = 0, rarecooldown = 0 WHERE uid = 15
+[!] Unknown column 'pokertable' in 'field list'
+
+[2022-07-27 02:59]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET amcount = 0, brokenleg = 0, Garage = 0, refunded = 0 where uid = 15
+[!] Unknown column 'amcount' in 'field list'
+
+[2022-07-27 02:59]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET phoneload = 0, capacity = 35 where uid = 15
+[!] Unknown column 'phoneload' in 'field list'
+
+[2022-07-27 02:59]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET platinumvoucher = 0, silvervoucher = 0, diamondvoucher = 0, tikis = 0, customplate = 0, farm_time = 0 WHERE uid = 15
+[!] Unknown column 'platinumvoucher' in 'field list'
+
+[2022-07-27 03:01]
+Error ID: 1146
+Callback: 
+Query: INSERT INTO log_am VALUES(null, NOW(), 'Admin Toxic_Server [uid: 15] > Toxic_Server [uid: 15]: ')
+[!] Table 'Free16.log_am' doesn't exist
+
+[2022-07-27 03:10]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET adminhide = 0, newbiemuted = 0, helpmuted = 0, admuted = 0, livemuted = 0, globalmuted = 0, reportmuted = 0, reportwarns = 0, fightstyle = 4, toggletextdraws = 0, toggleooc = 0, togglephone = 0, toggleadmin = 0, togglehelper = 0, togglenewbie = 0, togglewt = 0, togglevip = 0 WHERE uid = 15
+[!] Unknown column 'adminhide' in 'field list'
+
+[2022-07-27 03:10]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET pokertable = 0, totalpatients = 0, totalfires = 0, rarecooldown = 0 WHERE uid = 15
+[!] Unknown column 'pokertable' in 'field list'
+
+[2022-07-27 03:10]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET amcount = 1, brokenleg = 0, Garage = 0, refunded = 0 where uid = 15
+[!] Unknown column 'amcount' in 'field list'
+
+[2022-07-27 03:10]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET phoneload = 0, capacity = 35 where uid = 15
+[!] Unknown column 'phoneload' in 'field list'
+
+[2022-07-27 03:10]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET platinumvoucher = 0, silvervoucher = 0, diamondvoucher = 0, tikis = 0, customplate = 0, farm_time = 0 WHERE uid = 15
+[!] Unknown column 'platinumvoucher' in 'field list'
+
+[2022-07-27 03:59]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET adminhide = 0, newbiemuted = 0, helpmuted = 0, admuted = 0, livemuted = 0, globalmuted = 0, reportmuted = 0, reportwarns = 0, fightstyle = 4, toggletextdraws = 0, toggleooc = 0, togglephone = 0, toggleadmin = 0, togglehelper = 0, togglenewbie = 0, togglewt = 0, togglevip = 0 WHERE uid = 15
+[!] Unknown column 'adminhide' in 'field list'
+
+[2022-07-27 03:59]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET pokertable = 0, totalpatients = 0, totalfires = 0, rarecooldown = 0 WHERE uid = 15
+[!] Unknown column 'pokertable' in 'field list'
+
+[2022-07-27 03:59]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET amcount = 0, brokenleg = 0, Garage = 0, refunded = 0 where uid = 15
+[!] Unknown column 'amcount' in 'field list'
+
+[2022-07-27 03:59]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET phoneload = 0, capacity = 35 where uid = 15
+[!] Unknown column 'phoneload' in 'field list'
+
+[2022-07-27 03:59]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET platinumvoucher = 0, silvervoucher = 0, diamondvoucher = 0, tikis = 0, customplate = 0, farm_time = 0 WHERE uid = 15
+[!] Unknown column 'platinumvoucher' in 'field list'
+
+[2022-07-27 06:28]
+Error ID: 1054
+Callback: 
+Query: INSERT INTO vehicles (ownerid, owner, modelid, pos_x, pos_y, pos_z, pos_a, plate, color1, color2, carImpounded) VALUES(16, 'Invalid_User', 481, '1560.792', '-2325.345', '13.089', '86.58', '', 0, 0, '0')
+[!] Unknown column 'carImpounded' in 'field list'
+
+[2022-07-27 06:31]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET adminhide = 0, newbiemuted = 0, helpmuted = 0, admuted = 0, livemuted = 0, globalmuted = 0, reportmuted = 0, reportwarns = 0, fightstyle = 4, toggletextdraws = 0, toggleooc = 0, togglephone = 0, toggleadmin = 0, togglehelper = 0, togglenewbie = 0, togglewt = 0, togglevip = 0 WHERE uid = 15
+[!] Unknown column 'adminhide' in 'field list'
+
+[2022-07-27 06:31]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET pokertable = 0, totalpatients = 0, totalfires = 0, rarecooldown = 0 WHERE uid = 15
+[!] Unknown column 'pokertable' in 'field list'
+
+[2022-07-27 06:31]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET amcount = 0, brokenleg = 0, Garage = 0, refunded = 0 where uid = 15
+[!] Unknown column 'amcount' in 'field list'
+
+[2022-07-27 06:31]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET phoneload = 0, capacity = 35 where uid = 15
+[!] Unknown column 'phoneload' in 'field list'
+
+[2022-07-27 06:31]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET platinumvoucher = 0, silvervoucher = 0, diamondvoucher = 0, tikis = 0, customplate = 0, farm_time = 0 WHERE uid = 15
+[!] Unknown column 'platinumvoucher' in 'field list'
+
+[2022-07-27 06:37]
+Error ID: 1062
+Callback: OnInventoryAdd
+Query: INSERT INTO `inventory` (`ID`, `invID`, `invItem`, `invModel`, `invQuantity`) VALUES('16', '1', 'Crowbar', '18634', '1')
+[!] Duplicate entry '1' for key 'PRIMARY'
+
+[2022-07-27 06:40]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET adminhide = 0, newbiemuted = 0, helpmuted = 0, admuted = 0, livemuted = 0, globalmuted = 0, reportmuted = 0, reportwarns = 0, fightstyle = 4, toggletextdraws = 0, toggleooc = 0, togglephone = 0, toggleadmin = 0, togglehelper = 0, togglenewbie = 0, togglewt = 0, togglevip = 0 WHERE uid = 16
+[!] Unknown column 'adminhide' in 'field list'
+
+[2022-07-27 06:40]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET pokertable = 0, totalpatients = 0, totalfires = 0, rarecooldown = 0 WHERE uid = 16
+[!] Unknown column 'pokertable' in 'field list'
+
+[2022-07-27 06:40]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET amcount = 0, brokenleg = 0, Garage = 0, refunded = 0 where uid = 16
+[!] Unknown column 'amcount' in 'field list'
+
+[2022-07-27 06:40]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET phoneload = 0, capacity = 35 where uid = 16
+[!] Unknown column 'phoneload' in 'field list'
+
+[2022-07-27 06:40]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET platinumvoucher = 0, silvervoucher = 0, diamondvoucher = 0, tikis = 0, customplate = 0, farm_time = 0 WHERE uid = 16
+[!] Unknown column 'platinumvoucher' in 'field list'
+
+[2022-07-27 06:56]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET adminhide = 0, newbiemuted = 0, helpmuted = 0, admuted = 0, livemuted = 0, globalmuted = 0, reportmuted = 0, reportwarns = 0, fightstyle = 4, toggletextdraws = 0, toggleooc = 0, togglephone = 0, toggleadmin = 0, togglehelper = 0, togglenewbie = 0, togglewt = 0, togglevip = 0 WHERE uid = 15
+[!] Unknown column 'adminhide' in 'field list'
+
+[2022-07-27 06:56]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET pokertable = 0, totalpatients = 0, totalfires = 0, rarecooldown = 0 WHERE uid = 15
+[!] Unknown column 'pokertable' in 'field list'
+
+[2022-07-27 06:56]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET amcount = 0, brokenleg = 0, Garage = -1, refunded = 0 where uid = 15
+[!] Unknown column 'amcount' in 'field list'
+
+[2022-07-27 06:56]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET phoneload = 0, capacity = 35 where uid = 15
+[!] Unknown column 'phoneload' in 'field list'
+
+[2022-07-27 06:56]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET platinumvoucher = 0, silvervoucher = 0, diamondvoucher = 0, tikis = 0, customplate = 0, farm_time = 0 WHERE uid = 15
+[!] Unknown column 'platinumvoucher' in 'field list'
+
+[2022-07-27 07:00]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET adminhide = 0, newbiemuted = 0, helpmuted = 0, admuted = 0, livemuted = 0, globalmuted = 0, reportmuted = 0, reportwarns = 0, fightstyle = 4, toggletextdraws = 0, toggleooc = 0, togglephone = 0, toggleadmin = 0, togglehelper = 0, togglenewbie = 0, togglewt = 0, togglevip = 0 WHERE uid = 16
+[!] Unknown column 'adminhide' in 'field list'
+
+[2022-07-27 07:00]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET pokertable = 0, totalpatients = 0, totalfires = 0, rarecooldown = 0 WHERE uid = 16
+[!] Unknown column 'pokertable' in 'field list'
+
+[2022-07-27 07:00]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET amcount = 0, brokenleg = 0, Garage = 0, refunded = 0 where uid = 16
+[!] Unknown column 'amcount' in 'field list'
+
+[2022-07-27 07:00]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET phoneload = 0, capacity = 35 where uid = 16
+[!] Unknown column 'phoneload' in 'field list'
+
+[2022-07-27 07:00]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET platinumvoucher = 0, silvervoucher = 0, diamondvoucher = 0, tikis = 0, customplate = 0, farm_time = 0 WHERE uid = 16
+[!] Unknown column 'platinumvoucher' in 'field list'
+
+[2022-07-27 07:01]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET adminhide = 0, newbiemuted = 0, helpmuted = 0, admuted = 0, livemuted = 0, globalmuted = 0, reportmuted = 0, reportwarns = 0, fightstyle = 4, toggletextdraws = 0, toggleooc = 0, togglephone = 0, toggleadmin = 0, togglehelper = 0, togglenewbie = 0, togglewt = 0, togglevip = 0 WHERE uid = 16
+[!] Unknown column 'adminhide' in 'field list'
+
+[2022-07-27 07:01]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET pokertable = 0, totalpatients = 0, totalfires = 0, rarecooldown = 0 WHERE uid = 16
+[!] Unknown column 'pokertable' in 'field list'
+
+[2022-07-27 07:01]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET amcount = 0, brokenleg = 0, Garage = 0, refunded = 0 where uid = 16
+[!] Unknown column 'amcount' in 'field list'
+
+[2022-07-27 07:01]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET phoneload = 0, capacity = 35 where uid = 16
+[!] Unknown column 'phoneload' in 'field list'
+
+[2022-07-27 07:01]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET platinumvoucher = 0, silvervoucher = 0, diamondvoucher = 0, tikis = 0, customplate = 0, farm_time = 0 WHERE uid = 16
+[!] Unknown column 'platinumvoucher' in 'field list'
+
+[2022-07-27 10:35]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET adminhide = 0, newbiemuted = 0, helpmuted = 0, admuted = 0, livemuted = 0, globalmuted = 0, reportmuted = 0, reportwarns = 0, fightstyle = 4, toggletextdraws = 0, toggleooc = 0, togglephone = 0, toggleadmin = 0, togglehelper = 0, togglenewbie = 0, togglewt = 0, togglevip = 0 WHERE uid = 17
+[!] Unknown column 'adminhide' in 'field list'
+
+[2022-07-27 10:35]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET pokertable = 0, totalpatients = 0, totalfires = 0, rarecooldown = 0 WHERE uid = 17
+[!] Unknown column 'pokertable' in 'field list'
+
+[2022-07-27 10:35]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET amcount = 0, brokenleg = 0, Garage = 0, refunded = 0 where uid = 17
+[!] Unknown column 'amcount' in 'field list'
+
+[2022-07-27 10:35]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET phoneload = 0, capacity = 35 where uid = 17
+[!] Unknown column 'phoneload' in 'field list'
+
+[2022-07-27 10:35]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET platinumvoucher = 0, silvervoucher = 0, diamondvoucher = 0, tikis = 0, customplate = 0, farm_time = 0 WHERE uid = 17
+[!] Unknown column 'platinumvoucher' in 'field list'
+
+[2022-07-27 12:57]
+Error ID: 1054
+Callback: 
+Query: INSERT INTO vehicles (ownerid, owner, modelid, pos_x, pos_y, pos_z, pos_a, plate, color1, color2, carImpounded) VALUES(18, 'Prince_Azure', 481, '1560.792', '-2325.345', '13.089', '86.58', '', 0, 0, '0')
+[!] Unknown column 'carImpounded' in 'field list'
+
+[2022-07-27 12:57]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET adminhide = 0, newbiemuted = 0, helpmuted = 0, admuted = 0, livemuted = 0, globalmuted = 0, reportmuted = 0, reportwarns = 0, fightstyle = 4, toggletextdraws = 0, toggleooc = 0, togglephone = 0, toggleadmin = 0, togglehelper = 0, togglenewbie = 0, togglewt = 0, togglevip = 0 WHERE uid = 18
+[!] Unknown column 'adminhide' in 'field list'
+
+[2022-07-27 12:57]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET pokertable = 0, totalpatients = 0, totalfires = 0, rarecooldown = 0 WHERE uid = 18
+[!] Unknown column 'pokertable' in 'field list'
+
+[2022-07-27 12:57]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET amcount = 0, brokenleg = 0, Garage = -1, refunded = 0 where uid = 18
+[!] Unknown column 'amcount' in 'field list'
+
+[2022-07-27 12:57]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET phoneload = 0, capacity = 35 where uid = 18
+[!] Unknown column 'phoneload' in 'field list'
+
+[2022-07-27 12:57]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET platinumvoucher = 0, silvervoucher = 0, diamondvoucher = 0, tikis = 0, customplate = 0, farm_time = 0 WHERE uid = 18
+[!] Unknown column 'platinumvoucher' in 'field list'
+
+[2022-07-27 13:03]
+Error ID: 1054
+Callback: OnQueryFinished
+Query: SELECT id, modelid, pos_x, pos_y, pos_z, world, impounded, broken FROM vehicles WHERE ownerid = 18
+[!] Unknown column 'broken' in 'field list'
+
+[2022-07-27 13:04]
+Error ID: 1054
+Callback: OnQueryFinished
+Query: SELECT id, modelid, pos_x, pos_y, pos_z, world, impounded, broken FROM vehicles WHERE ownerid = 18
+[!] Unknown column 'broken' in 'field list'
+
+[2022-07-27 13:04]
+Error ID: 1054
+Callback: OnQueryFinished
+Query: SELECT id, modelid, pos_x, pos_y, pos_z, world, impounded, broken FROM vehicles WHERE ownerid = 18
+[!] Unknown column 'broken' in 'field list'
+
+[2022-07-27 13:04]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET adminhide = 0, newbiemuted = 0, helpmuted = 0, admuted = 0, livemuted = 0, globalmuted = 0, reportmuted = 0, reportwarns = 0, fightstyle = 4, toggletextdraws = 0, toggleooc = 0, togglephone = 0, toggleadmin = 0, togglehelper = 0, togglenewbie = 0, togglewt = 0, togglevip = 0 WHERE uid = 18
+[!] Unknown column 'adminhide' in 'field list'
+
+[2022-07-27 13:04]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET pokertable = 0, totalpatients = 0, totalfires = 0, rarecooldown = 0 WHERE uid = 18
+[!] Unknown column 'pokertable' in 'field list'
+
+[2022-07-27 13:04]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET amcount = 0, brokenleg = 0, Garage = 0, refunded = 0 where uid = 18
+[!] Unknown column 'amcount' in 'field list'
+
+[2022-07-27 13:04]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET phoneload = 0, capacity = 35 where uid = 18
+[!] Unknown column 'phoneload' in 'field list'
+
+[2022-07-27 13:04]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET platinumvoucher = 0, silvervoucher = 0, diamondvoucher = 0, tikis = 0, customplate = 0, farm_time = 0 WHERE uid = 18
+[!] Unknown column 'platinumvoucher' in 'field list'
+
+[2022-07-27 17:49]
+Error ID: 1054
+Callback: OnQueryFinished
+Query: SELECT id, modelid, pos_x, pos_y, pos_z, world, impounded, broken FROM vehicles WHERE ownerid = 12
+[!] Unknown column 'broken' in 'field list'
+
+[2022-07-27 17:49]
+Error ID: 1054
+Callback: OnQueryFinished
+Query: SELECT id, modelid, pos_x, pos_y, pos_z, world, impounded, broken FROM vehicles WHERE ownerid = 12
+[!] Unknown column 'broken' in 'field list'
+
+[2022-07-27 17:51]
+Error ID: 1054
+Callback: OnQueryFinished
+Query: SELECT id, modelid, pos_x, pos_y, pos_z, world, impounded, broken FROM vehicles WHERE ownerid = 12
+[!] Unknown column 'broken' in 'field list'
+
+[2022-07-27 17:52]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET adminhide = 0, newbiemuted = 0, helpmuted = 0, admuted = 0, livemuted = 0, globalmuted = 0, reportmuted = 0, reportwarns = 0, fightstyle = 4, toggletextdraws = 0, toggleooc = 0, togglephone = 0, toggleadmin = 0, togglehelper = 0, togglenewbie = 0, togglewt = 0, togglevip = 0 WHERE uid = 12
+[!] Unknown column 'adminhide' in 'field list'
+
+[2022-07-27 17:52]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET pokertable = 0, totalpatients = 0, totalfires = 0, rarecooldown = 0 WHERE uid = 12
+[!] Unknown column 'pokertable' in 'field list'
+
+[2022-07-27 17:52]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET amcount = 0, brokenleg = 0, Garage = 0, refunded = 0 where uid = 12
+[!] Unknown column 'amcount' in 'field list'
+
+[2022-07-27 17:52]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET phoneload = 0, capacity = 35 where uid = 12
+[!] Unknown column 'phoneload' in 'field list'
+
+[2022-07-27 17:52]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET platinumvoucher = 0, silvervoucher = 0, diamondvoucher = 0, tikis = 0, customplate = 0, farm_time = 0 WHERE uid = 12
+[!] Unknown column 'platinumvoucher' in 'field list'
+
+[2022-07-28 05:43]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET adminhide = 0, newbiemuted = 0, helpmuted = 0, admuted = 0, livemuted = 0, globalmuted = 0, reportmuted = 0, reportwarns = 0, fightstyle = 4, toggletextdraws = 0, toggleooc = 0, togglephone = 0, toggleadmin = 0, togglehelper = 0, togglenewbie = 0, togglewt = 0, togglevip = 0 WHERE uid = 19
+[!] Unknown column 'adminhide' in 'field list'
+
+[2022-07-28 05:43]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET pokertable = 0, totalpatients = 0, totalfires = 0, rarecooldown = 0 WHERE uid = 19
+[!] Unknown column 'pokertable' in 'field list'
+
+[2022-07-28 05:43]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET amcount = 0, brokenleg = 0, Garage = 0, refunded = 0 where uid = 19
+[!] Unknown column 'amcount' in 'field list'
+
+[2022-07-28 05:43]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET phoneload = 0, capacity = 35 where uid = 19
+[!] Unknown column 'phoneload' in 'field list'
+
+[2022-07-28 05:43]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET platinumvoucher = 0, silvervoucher = 0, diamondvoucher = 0, tikis = 0, customplate = 0, farm_time = 0 WHERE uid = 19
+[!] Unknown column 'platinumvoucher' in 'field list'
+
+[2022-07-28 05:44]
+Error ID: 1054
+Callback: 
+Query: INSERT INTO vehicles (ownerid, owner, modelid, pos_x, pos_y, pos_z, pos_a, plate, color1, color2, carImpounded) VALUES(19, 'Roberto_C._Diaz', 481, '1560.792', '-2325.345', '13.089', '86.58', '', 0, 0, '0')
+[!] Unknown column 'carImpounded' in 'field list'
+
+[2022-07-28 05:44]
+Error ID: 1054
+Callback: OnQueryFinished
+Query: SELECT id, modelid, pos_x, pos_y, pos_z, world, impounded, broken FROM vehicles WHERE ownerid = 19
+[!] Unknown column 'broken' in 'field list'
+
+[2022-07-28 05:44]
+Error ID: 1054
+Callback: OnQueryFinished
+Query: SELECT id, modelid, pos_x, pos_y, pos_z, world, impounded, broken FROM vehicles WHERE ownerid = 19
+[!] Unknown column 'broken' in 'field list'
+
+[2022-07-28 05:44]
+Error ID: 1054
+Callback: OnQueryFinished
+Query: SELECT id, modelid, pos_x, pos_y, pos_z, world, impounded, broken FROM vehicles WHERE ownerid = 19
+[!] Unknown column 'broken' in 'field list'
+
+[2022-07-28 05:55]
+Error ID: 1146
+Callback: 
+Query: DELETE FROM factionlockers WHERE factionid = 1
+[!] Table 'Free16.factionlockers' doesn't exist
+
+[2022-07-28 05:59]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET adminhide = 0, newbiemuted = 0, helpmuted = 0, admuted = 0, livemuted = 0, globalmuted = 0, reportmuted = 0, reportwarns = 0, fightstyle = 4, toggletextdraws = 0, toggleooc = 0, togglephone = 0, toggleadmin = 0, togglehelper = 0, togglenewbie = 0, togglewt = 0, togglevip = 0 WHERE uid = 16
+[!] Unknown column 'adminhide' in 'field list'
+
+[2022-07-28 05:59]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET pokertable = 0, totalpatients = 0, totalfires = 0, rarecooldown = 0 WHERE uid = 16
+[!] Unknown column 'pokertable' in 'field list'
+
+[2022-07-28 05:59]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET amcount = 0, brokenleg = 0, Garage = 0, refunded = 0 where uid = 16
+[!] Unknown column 'amcount' in 'field list'
+
+[2022-07-28 05:59]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET phoneload = 0, capacity = 35 where uid = 16
+[!] Unknown column 'phoneload' in 'field list'
+
+[2022-07-28 05:59]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET platinumvoucher = 0, silvervoucher = 0, diamondvoucher = 0, tikis = 0, customplate = 0, farm_time = 0 WHERE uid = 16
+[!] Unknown column 'platinumvoucher' in 'field list'
+
+[2022-07-28 06:00]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET adminhide = 0, newbiemuted = 0, helpmuted = 0, admuted = 0, livemuted = 0, globalmuted = 0, reportmuted = 0, reportwarns = 0, fightstyle = 4, toggletextdraws = 0, toggleooc = 0, togglephone = 0, toggleadmin = 0, togglehelper = 0, togglenewbie = 0, togglewt = 0, togglevip = 0 WHERE uid = 19
+[!] Unknown column 'adminhide' in 'field list'
+
+[2022-07-28 06:00]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET pokertable = 0, totalpatients = 0, totalfires = 0, rarecooldown = 0 WHERE uid = 19
+[!] Unknown column 'pokertable' in 'field list'
+
+[2022-07-28 06:00]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET amcount = 0, brokenleg = 0, Garage = 0, refunded = 0 where uid = 19
+[!] Unknown column 'amcount' in 'field list'
+
+[2022-07-28 06:00]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET phoneload = 0, capacity = 35 where uid = 19
+[!] Unknown column 'phoneload' in 'field list'
+
+[2022-07-28 06:00]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET platinumvoucher = 0, silvervoucher = 0, diamondvoucher = 0, tikis = 0, customplate = 0, farm_time = 0 WHERE uid = 19
+[!] Unknown column 'platinumvoucher' in 'field list'
+
+[2022-07-28 06:04]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET adminhide = 0, newbiemuted = 0, helpmuted = 0, admuted = 0, livemuted = 0, globalmuted = 0, reportmuted = 0, reportwarns = 0, fightstyle = 4, toggletextdraws = 0, toggleooc = 0, togglephone = 0, toggleadmin = 0, togglehelper = 0, togglenewbie = 0, togglewt = 0, togglevip = 0 WHERE uid = 19
+[!] Unknown column 'adminhide' in 'field list'
+
+[2022-07-28 06:04]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET pokertable = 0, totalpatients = 0, totalfires = 0, rarecooldown = 0 WHERE uid = 19
+[!] Unknown column 'pokertable' in 'field list'
+
+[2022-07-28 06:04]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET amcount = 0, brokenleg = 0, Garage = 0, refunded = 0 where uid = 19
+[!] Unknown column 'amcount' in 'field list'
+
+[2022-07-28 06:04]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET phoneload = 0, capacity = 35 where uid = 19
+[!] Unknown column 'phoneload' in 'field list'
+
+[2022-07-28 06:04]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET platinumvoucher = 0, silvervoucher = 0, diamondvoucher = 0, tikis = 0, customplate = 0, farm_time = 0 WHERE uid = 19
+[!] Unknown column 'platinumvoucher' in 'field list'
+
+[2022-07-28 11:50]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET adminhide = 0, newbiemuted = 0, helpmuted = 0, admuted = 0, livemuted = 0, globalmuted = 0, reportmuted = 0, reportwarns = 0, fightstyle = 4, toggletextdraws = 0, toggleooc = 0, togglephone = 0, toggleadmin = 0, togglehelper = 0, togglenewbie = 0, togglewt = 0, togglevip = 0 WHERE uid = 20
+[!] Unknown column 'adminhide' in 'field list'
+
+[2022-07-28 11:50]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET pokertable = 0, totalpatients = 0, totalfires = 0, rarecooldown = 0 WHERE uid = 20
+[!] Unknown column 'pokertable' in 'field list'
+
+[2022-07-28 11:50]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET amcount = 0, brokenleg = 0, Garage = 0, refunded = 0 where uid = 20
+[!] Unknown column 'amcount' in 'field list'
+
+[2022-07-28 11:50]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET phoneload = 0, capacity = 35 where uid = 20
+[!] Unknown column 'phoneload' in 'field list'
+
+[2022-07-28 11:50]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET platinumvoucher = 0, silvervoucher = 0, diamondvoucher = 0, tikis = 0, customplate = 0, farm_time = 0 WHERE uid = 20
+[!] Unknown column 'platinumvoucher' in 'field list'
+
+[2022-07-29 04:39]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET adminhide = 0, newbiemuted = 0, helpmuted = 0, admuted = 0, livemuted = 0, globalmuted = 0, reportmuted = 0, reportwarns = 0, fightstyle = 4, toggletextdraws = 0, toggleooc = 0, togglephone = 0, toggleadmin = 0, togglehelper = 0, togglenewbie = 0, togglewt = 0, togglevip = 0 WHERE uid = 21
+[!] Unknown column 'adminhide' in 'field list'
+
+[2022-07-29 04:39]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET pokertable = 0, totalpatients = 0, totalfires = 0, rarecooldown = 0 WHERE uid = 21
+[!] Unknown column 'pokertable' in 'field list'
+
+[2022-07-29 04:39]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET amcount = 0, brokenleg = 0, Garage = -1, refunded = 0 where uid = 21
+[!] Unknown column 'amcount' in 'field list'
+
+[2022-07-29 04:39]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET phoneload = 0, capacity = 35 where uid = 21
+[!] Unknown column 'phoneload' in 'field list'
+
+[2022-07-29 04:39]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET platinumvoucher = 0, silvervoucher = 0, diamondvoucher = 0, tikis = 0, customplate = 0, farm_time = 0 WHERE uid = 21
+[!] Unknown column 'platinumvoucher' in 'field list'
+
+[2025-09-05 23:10]
+Error ID: 1054
+Callback: 
+Query: INSERT INTO factionpay (fid, rankid, amount) VALUES(8, 5, 1000) ON DUPLICATE KEY UPDATE amount = 1000
+[!] Unknown column 'fid' in 'INSERT INTO'
+
+[2025-09-07 00:41]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET vipvoucher_1 = 1, freebies = 1 WHERE uid = 932
+[!] Unknown column 'vipvoucher_1' in 'SET'
+
+[2025-09-07 00:51]
+Error ID: 1054
+Callback: 
+Query: UPDATE users SET vipvoucher_1 = 1, freebies = 1 WHERE uid = 932
+[!] Unknown column 'vipvoucher_1' in 'SET'
+
+[2025-09-09 02:39]
+Error ID: 1054
+Callback: 
+Query: UPDATE textlabels SET iconid = 1278 WHERE id = 70
+[!] Unknown column 'iconid' in 'SET'
+
+[2025-09-09 02:39]
+Error ID: 1054
+Callback: 
+Query: UPDATE textlabels SET iconid = 1278 WHERE id = 70
+[!] Unknown column 'iconid' in 'SET'
+
+[2025-09-09 02:46]
+Error ID: 1054
+Callback: 
+Query: UPDATE textlabels SET iconid = 1278 WHERE id = 71
+[!] Unknown column 'iconid' in 'SET'
+
+[2025-09-09 02:46]
+Error ID: 1054
+Callback: 
+Query: UPDATE textlabels SET iconid = 1274 WHERE id = 71
+[!] Unknown column 'iconid' in 'SET'
+
+[2025-09-09 02:48]
+Error ID: 1054
+Callback: 
+Query: UPDATE textlabels SET iconid = 1274 WHERE id = 71
+[!] Unknown column 'iconid' in 'SET'
+
+[2025-09-19 22:21]
+Error ID: 1146
+Callback: OnQueryFinished
+Query: SELECT * FROM dropitems
+[!] Table 's20_otenan.dropitems' doesn't exist
+

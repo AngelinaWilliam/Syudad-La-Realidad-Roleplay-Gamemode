@@ -1,0 +1,16 @@
+[12:42:28] : [sv:dbg:network:init] : module initializing...
+[12:42:28] : [dbg:raknet:init] : module initializing...
+[12:42:28] : [dbg:raknet:init] : module initialized
+[12:42:28] : [sv:dbg:network:init] : module initialized
+[12:42:28] : [sv:dbg:main:Load] : creating 2 work threads...
+[12:42:28] :  -------------------------------------------    
+[12:42:28] :    ___                __   __    _              
+[12:42:28] :   / __| __ _ _ __  _ _\ \ / /__ (_) __ ___    
+[12:42:28] :   \__ \/ _` | '  \| '_ \   / _ \| |/ _/ -_)
+[12:42:28] :   |___/\__,_|_|_|_| .__/\_/\___/|_|\__\___|
+[12:42:28] :                   |_|                           
+[12:42:28] :  -------------------------------------------    
+[12:42:28] :                 SampVoice by MOR                
+[12:42:28] :     Ported to open.mp by AmyrAhmady (iAmir)     
+[12:42:28] :  -------------------------------------------    
+[12:42:28] : [sv:dbg:network:bind] : voice server running on port 6013

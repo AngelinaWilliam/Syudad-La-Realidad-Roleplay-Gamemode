@@ -1,0 +1,78 @@
+[09/03/25 01:45:00] [plugins/discord-connector] Unknown gateway event 'GUILD_MEMBERS_CHUNK'
+[09/03/25 01:50:31] [plugins/discord-connector] Unknown gateway event 'GUILD_MEMBERS_CHUNK'
+[09/03/25 03:04:17] [plugins/discord-connector] Unknown gateway event 'GUILD_MEMBERS_CHUNK'
+[09/03/25 03:18:04] [plugins/discord-connector] Unknown gateway event 'GUILD_MEMBERS_CHUNK'
+[09/03/25 03:20:10] [plugins/discord-connector] Unknown gateway event 'GUILD_MEMBERS_CHUNK'
+[09/03/25 03:57:21] [plugins/discord-connector] Unknown gateway event 'GUILD_MEMBERS_CHUNK'
+[09/03/25 04:16:34] [plugins/discord-connector] Unknown gateway event 'USER_UPDATE'
+[09/03/25 08:05:07] [plugins/discord-connector] Error while shutting down SSL on HTTP connection: Broken pipe (32)
+[09/05/25 10:23:31] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_START_TIME_UPDATE'
+[09/05/25 10:34:03] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_START_TIME_UPDATE'
+[09/05/25 10:34:03] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_STATUS_UPDATE'
+[09/05/25 11:51:07] [plugins/discord-connector] Error while shutting down SSL on HTTP connection: Broken pipe (32)
+[09/07/25 02:09:40] [plugins/discord-connector] Error while shutting down SSL on HTTP connection: Broken pipe (32)
+[09/07/25 16:24:14] [plugins/discord-connector] Error while shutting down SSL on HTTP connection: Broken pipe (32)
+[09/09/25 19:16:21] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_START_TIME_UPDATE'
+[09/09/25 19:20:05] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_START_TIME_UPDATE'
+[09/09/25 19:20:05] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_STATUS_UPDATE'
+[09/10/25 02:18:20] [plugins/discord-connector] Error while shutting down SSL on HTTP connection: Broken pipe (32)
+[09/12/25 11:36:16] [plugins/discord-connector] Error while shutting down SSL on HTTP connection: Broken pipe (32)
+[09/13/25 09:11:55] [plugins/discord-connector] Error while shutting down SSL on HTTP connection: Broken pipe (32)
+[09/14/25 06:04:18] [plugins/discord-connector] Error while shutting down SSL on HTTP connection: Broken pipe (32)
+[09/14/25 08:18:32] [plugins/discord-connector] Error while shutting down SSL on HTTP connection: Broken pipe (32)
+[09/14/25 09:39:19] [plugins/discord-connector] Error while shutting down SSL on HTTP connection: Broken pipe (32)
+[09/14/25 15:48:12] [plugins/discord-connector] Error while shutting down SSL on HTTP connection: Broken pipe (32)
+[09/16/25 20:53:56] [plugins/discord-connector] Error while shutting down SSL on HTTP connection: Broken pipe (32)
+[09/17/25 08:22:20] [plugins/discord-connector] Error while shutting down SSL on HTTP connection: Broken pipe (32)
+[09/18/25 20:35:25] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_START_TIME_UPDATE'
+[09/18/25 21:08:23] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_START_TIME_UPDATE'
+[09/18/25 21:08:23] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_STATUS_UPDATE'
+[09/18/25 22:12:47] [plugins/discord-connector] Error while shutting down SSL on HTTP connection: Broken pipe (32)
+[09/19/25 01:17:06] [plugins/discord-connector] Error while shutting down SSL on HTTP connection: Broken pipe (32)
+[09/19/25 09:32:00] [plugins/discord-connector] Error while shutting down SSL on HTTP connection: Broken pipe (32)
+[09/19/25 18:51:56] [plugins/discord-connector] Error while shutting down SSL on HTTP connection: Broken pipe (32)
+[09/19/25 22:21:45] [plugins/discord-connector] Unknown gateway event 'GUILD_MEMBERS_CHUNK'
+[09/20/25 02:36:02] [plugins/discord-connector] Error while shutting down SSL on HTTP connection: Broken pipe (32)
+[09/20/25 04:28:32] [plugins/discord-connector] Error while shutting down SSL on HTTP connection: Broken pipe (32)
+[09/20/25 13:26:49] [plugins/discord-connector] Unknown gateway event 'GUILD_MEMBERS_CHUNK'
+[09/20/25 13:45:16] [plugins/discord-connector] Unknown gateway event 'GUILD_MEMBERS_CHUNK'
+[09/20/25 19:44:16] [plugins/discord-connector] Error while shutting down SSL on HTTP connection: Broken pipe (32)
+[09/20/25 19:51:59] [plugins/discord-connector] Unknown gateway event 'GUILD_MEMBERS_CHUNK'
+[09/20/25 23:57:06] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_START_TIME_UPDATE'
+[09/21/25 00:01:36] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_START_TIME_UPDATE'
+[09/21/25 00:01:36] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_STATUS_UPDATE'
+[09/21/25 02:09:07] [plugins/discord-connector] Error while shutting down SSL on HTTP connection: Broken pipe (32)
+[09/21/25 12:48:50] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_START_TIME_UPDATE'
+[09/21/25 15:26:07] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_START_TIME_UPDATE'
+[09/21/25 15:26:07] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_STATUS_UPDATE'
+[09/21/25 18:42:08] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_START_TIME_UPDATE'
+[09/21/25 20:56:03] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_START_TIME_UPDATE'
+[09/21/25 20:56:03] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_STATUS_UPDATE'
+[09/21/25 21:01:38] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_START_TIME_UPDATE'
+[09/21/25 21:02:09] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_START_TIME_UPDATE'
+[09/21/25 21:02:09] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_STATUS_UPDATE'
+[09/21/25 21:02:58] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_START_TIME_UPDATE'
+[09/21/25 21:03:44] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_START_TIME_UPDATE'
+[09/21/25 21:03:44] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_STATUS_UPDATE'
+[09/21/25 21:04:30] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_START_TIME_UPDATE'
+[09/21/25 21:04:37] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_START_TIME_UPDATE'
+[09/21/25 21:04:37] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_STATUS_UPDATE'
+[09/21/25 21:04:37] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_START_TIME_UPDATE'
+[09/21/25 21:04:41] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_START_TIME_UPDATE'
+[09/21/25 21:04:41] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_STATUS_UPDATE'
+[09/21/25 21:07:15] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_START_TIME_UPDATE'
+[09/21/25 23:12:01] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_START_TIME_UPDATE'
+[09/21/25 23:12:01] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_STATUS_UPDATE'
+[09/21/25 23:15:35] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_START_TIME_UPDATE'
+[09/21/25 23:16:06] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_START_TIME_UPDATE'
+[09/21/25 23:16:06] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_STATUS_UPDATE'
+[09/22/25 07:41:14] [plugins/discord-connector] Error while shutting down SSL on HTTP connection: Broken pipe (32)
+[09/22/25 09:07:00] [plugins/discord-connector] Error while shutting down SSL on HTTP connection: Broken pipe (32)
+[09/22/25 21:01:00] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_START_TIME_UPDATE'
+[09/22/25 21:27:57] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_START_TIME_UPDATE'
+[09/22/25 21:27:57] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_STATUS_UPDATE'
+[09/28/25 21:30:46] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_START_TIME_UPDATE'
+[09/28/25 21:31:10] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_START_TIME_UPDATE'
+[09/28/25 21:31:10] [plugins/discord-connector] Unknown gateway event 'VOICE_CHANNEL_STATUS_UPDATE'
+[09/29/25 04:37:36] [plugins/discord-connector] Error while shutting down SSL on HTTP connection: Broken pipe (32)
+[09/29/25 11:40:25] [plugins/discord-connector] Error while shutting down SSL on HTTP connection: Broken pipe (32)

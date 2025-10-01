@@ -1,0 +1,2 @@
+C:\Users\Adriann\Desktop\CCROLEPLAAY\MAIN\gamemodes\LS\modular\anticheat\ac_core.pwn(6) : îøèáêà 017: íåîáúÿâëåííûé ñèìâîë "MAX_PLAYERS"
+C:\Users\Adriann\Desktop\CCROLEPLAAY\MAIN\gamemodes\LS\modular\anticheat\ac_core.pwn(6) : îøèáêà 008: äîëæíî áûòü ïîñòîÿííûì âûðàæåíèåì; ïðèíÿò íîëü

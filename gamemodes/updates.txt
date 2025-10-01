@@ -1,0 +1,2 @@
+fixed faction bug
+fixed verification not working
