@@ -48,13 +48,13 @@
 
 // --- Server Information --- //
 #define SERVER_BOT       "GabSiraulo BOT"
-#define VERSION          "1.0"
-#define REVISION         "SLR:RP "VERSION""
-#define SERVER_NAME      "Syudad La Realidad"
+#define VERSION          "1.0(a)"
+#define REVISION         "OC:RP "VERSION""
+#define SERVER_NAME      "One City Roleplay"
 #define SERVER_DIALOG    "{EC7063}"SERVER_NAME" "WHITE""VERSION""
 #define SERVER_URL       "https://discord.gg/g4fqHyzxMh"
 
-#define SERVER_NAME "Syudad La Realidad"
+#define SERVER_NAME "One City Roleplay"
 #define DIALOG_TP 1234 // example, siguraduhing unique ang ID
 
 #define SERVER_MUSIC_URL ""SERVER_URL"/music"
@@ -11505,10 +11505,10 @@ TeleportToPlayer(playerid, targetid, bool:vehicle = true)
     TeleportToCoords(playerid, x + 1, y + 1, z, a, GetPlayerInterior(targetid), GetPlayerVirtualWorld(targetid), .vehicle = vehicle);
 }
 
-/*stock Inventory_Clear(playerid)
+stock Inventory_Clear(playerid)
 {
 	static
-	    string[64];
+    string[64];
 
 	for(new i = 0; i < MAX_INVENTORY; i++)
 	{
@@ -11520,21 +11520,7 @@ TeleportToPlayer(playerid, targetid, bool:vehicle = true)
 		}
 	}
 	return 1;
-}*/
-stock Inventory_Clear(playerid)
-{
-    for(new i = 0; i < MAX_INVENTORY; i++)
-    {
-        if (InventoryData[playerid][i][invExists])
-        {
-            InventoryData[playerid][i][invExists] = 0;
-            InventoryData[playerid][i][invModel] = 0;
-            InventoryData[playerid][i][invQuantity] = 0;
-        }
-    }
-    return 1;
 }
-
 
 stock Inventory_GetItemID(playerid, item[])
 {
@@ -11614,6 +11600,14 @@ stock Inventory_SetQuantity(playerid, item[], quantity, totalquantity)
 	    InventoryData[playerid][itemid][invTotalQuantity] = totalquantity;
 	}
 	return 1;
+}
+
+stock Inventory_WeaponRemove(playerid, item[])
+{
+    new
+        itemid = Inventory_GetItemID(playerid, item);    
+    Inventory_Remove(playerid, item, InventoryData[playerid][itemid][invQuantity]);
+    return 0;
 }
 
 stock Inventory_Remove(playerid, item[], quantity = 1)
@@ -11704,10 +11698,7 @@ stock Inventory_Add(playerid, item[], model, quantity = 1)
 		        return itemid;
 			}
 		}
-		mysql_format(connectionID, queryBuffer, sizeof(queryBuffer), "UPDATE `inventory` SET `invQuantity` = `invQuantity` + %d WHERE `ID` = '%i' AND `invID` = '%d'", quantity, PlayerInfo[playerid][pID], InventoryData[playerid][itemid][invID]);
-        mysql_tquery(connectionID, queryBuffer);
-
-        InventoryData[playerid][itemid][invQuantity] += quantity;
+		return 0;
 	}
 	return itemid;
 }
@@ -11882,16 +11873,9 @@ stock Inventory_Show(playerid)
 	if(!IsPlayerConnected(playerid))
 		return 0;
 
-	new str[256];
-	new string[128]; // declare bago ang loop
-	new totalall;
-
-	for(new i = 0; i < MAX_INVENTORY; i++)
-	{
-	    strunpack(string, InventoryData[playerid][i][invItem]);
-	    format(str, sizeof(str), "%s", string);
-	    TextDrawSetString(NAMETD[i], str);
-	}
+	new str[256], string[256], totalall, quantitybar;
+	format(str,1000,"%s", GetName(playerid));
+	TextDrawSetString(INVNAME[3], str);
 	//BarangMasuk(playerid);
 	Inventory_Update(playerid);
 	BukaInven[playerid] = 1;
@@ -12161,7 +12145,7 @@ public OnPlayerUseItem(playerid, itemid, name[], value)
 forward OnPlayerDropInvItem(playerid, itemid, name[], value);
 public OnPlayerDropInvItem(playerid, itemid, name[], value)
 {
-    /*new string[64];*/
+    new string[64];
     new str[64];
 
 	if(Inventory_Count(playerid, name) < PlayerInfo[playerid][pGiveAmount])
@@ -12179,7 +12163,7 @@ public OnPlayerDropInvItem(playerid, itemid, name[], value)
 forward OnPlayerGiveInvItem(playerid, userid, itemid, name[], value);
 public OnPlayerGiveInvItem(playerid, userid, itemid, name[], value)
 {
-/*    new string[64];*/
+    new string[64];
     new str[64];
 
 	if(Inventory_Count(playerid, name) < PlayerInfo[playerid][pGiveAmount])
@@ -12288,7 +12272,7 @@ ShowDropTD(playerid, count)
             new number = GetPVarInt(playerid, "dropitemvalue1");
             format(string, sizeof(string), "%s", DROPInfo[number][aItemname]);
 			PlayerTextDrawSetString(playerid, D_DROPTD[playerid][13], string);
-			format(string, sizeof(string),"%ipx", DROPInfo[number][aitemamount]);
+			format(string, sizeof(string), "%ipx", DROPInfo[number][aitemamount]);
 			PlayerTextDrawSetString(playerid, D_DROPTD[playerid][14], string);
 			//format(string, sizeof(string), "%i", DROPInfo[number][aItem]);
 			PlayerTextDrawSetPreviewModel(playerid, D_DROPTD[playerid][7], DROPInfo[number][aItem]);			
@@ -22486,7 +22470,7 @@ public OnQueryFinished(threadid, extraid)
 
                         if(PlayerInfo[extraid][pAdmin])
                         {
-                            SAM(COLOR_GREEN, "[Admin Online]"WHITE" %s %s has logged in (playing on %s).", GetAdminRank(extraid), GetRPName(extraid), "Syudd La Realidad");
+                            SAM(COLOR_GREEN, "[Admin Online]"WHITE" %s %s has logged in (playing on %s).", GetAdminRank(extraid), GetRPName(extraid), "One City");
                         }
 
                         
@@ -24616,31 +24600,21 @@ public OnPlayerClickTextDraw(playerid, Text:clickedid)
 	}		
 	else if(clickedid == INVINFO[4])
 	{
-	    new id = PlayerInfo[playerid][pSelectItem];
-	    new count = 0; // declare dito, gagamitin sa logic
+		new str[1024], id = PlayerInfo[playerid][pSelectItem], count = 0;
 
-	    if(id == -1)
-	    {
-	        SendClientMessage(playerid, COLOR_YELLOW, "Select Item");
-	    }
-	    else
-	    {
-	        new string[64];
-	        strunpack(string, InventoryData[playerid][id][invItem]);
+		if(id == -1)
+		{
+			SendClientMessage(playerid, COLOR_YELLOW, "Select Item");
+		}
+		else
+		{
+		    new string[64];
+			strunpack(string, InventoryData[playerid][id][invItem]);
+			if (PlayerInfo[playerid][pGiveAmount] < 1)
+				return SendClientMessage(playerid, COLOR_YELLOW, "Set Amount First");
 
-	        if (PlayerInfo[playerid][pGiveAmount] < 1)
-	            return SendClientMessage(playerid, COLOR_YELLOW, "Set Amount First");
-
-	        // Gamitin si count para bilangin kung ilang items meron ang player
-	        count = Inventory_Count(playerid, string);
-	        if(count < PlayerInfo[playerid][pGiveAmount])
-	        {
-	            SendClientMessage(playerid, COLOR_YELLOW, "You don't have enough items.");
-	            return 0;
-	        }
-
-	        CallLocalFunction("OnPlayerDropInvItem", "dds[128]d", playerid, InventoryData[playerid][id][invModel], string, PlayerInfo[playerid][pGiveAmount]);
-	    }
+			CallLocalFunction("OnPlayerDropInvItem", "dds[128]d", playerid, InventoryData[playerid][id][invModel], string, PlayerInfo[playerid][pGiveAmount]);
+		}
 	}
 	else if(clickedid == INVINFO[3])
 	{
@@ -25326,7 +25300,7 @@ public OnPlayerConnect(playerid)
     else if (!SvHasMicro(playerid)) SendClientMessage(playerid, COLOR_WHITE, "You're holding an old version of the plugin, possibly incompatiable. update it.");
     else if ((lstream[playerid] = SvCreateDLStreamAtPlayer(20.0, SV_INFINITY, playerid, 0x6E6E6EFF, "Normal")))
     {
-        SendClientMessage(playerid, COLOR_LIGHTGREEN, "Welcome to Syudad La Realidad Roleplay!!");
+        SendClientMessage(playerid, COLOR_LIGHTGREEN, "Welcome to One City Roleplay!!");
         SendClientMessage(playerid, COLOR_LIGHTGREEN, "Head Management Rain");
         SendClientMessage(playerid, COLOR_LIGHTGREEN, "[Voice Chat] Connected B/Z/R for PC");
         if (gstream) SvAttachListenerToStream(gstream, playerid);
@@ -29867,15 +29841,12 @@ public OnPlayerCommandPerformed(playerid, cmd[], params[], result, flags)
 }
 Item_Nearest(playerid)
 {
-    for (new i = 0; i != MAX_DROPPED_ITEMS; i++)
+    for (new i = 0; i != MAX_DROPPED_ITEMS; i ++) if (DroppedItems[i][droppedModel] && IsPlayerInRangeOfPoint(playerid, 1.5, DroppedItems[i][droppedPos][0], DroppedItems[i][droppedPos][1], DroppedItems[i][droppedPos][2]))
     {
-        if (DroppedItems[i][droppedModel] && IsPlayerInRangeOfPoint(playerid, 1.5, DroppedItems[i][droppedPos][0], DroppedItems[i][droppedPos][1], DroppedItems[i][droppedPos][2]))
-        {
-            if (GetPlayerInterior(playerid) == DroppedItems[i][droppedInt] && GetPlayerVirtualWorld(playerid) == DroppedItems[i][droppedWorld])
-                return i; // ibabalik ang index ng nearest item
-        }
+        if (GetPlayerInterior(playerid) == DroppedItems[i][droppedInt] && GetPlayerVirtualWorld(playerid) == DroppedItems[i][droppedWorld])
+            return i;
     }
-    return -1; // walang item malapit
+    return -1;
 }
 
 stock GetMaxCrates(vehicleid)
@@ -30208,36 +30179,26 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
             }
         }
 
-		if(GetPlayerState(playerid) == PLAYER_STATE_ONFOOT)
-		{
-		    new id = PlayerInfo[playerid][pSelectItem]; // halimbawa ginagamit mo sa inventory
-
-		    if(GetPVarType(playerid, "Tackling"))
-		    {
-		        CopGetUp(playerid);
-		        ClearTackle(GetPVarInt(playerid, "Tackling"));
-		        return 1;
-		    }
-
-		    if(IsPlayerInRangeOfPoint(playerid, 4.0, 2940.3108, -1467.3468, 10.9137))
-		    {
-		        ShowDialogToPlayer(playerid, DIALOG_TIKISTORE);
-		    }
-
-		    if(IsPlayerInRangeOfPoint(playerid, 4.0, 2941.4414, -1457.9231, 10.8645))
-		    {
-		        for(new i = 0; i < 37; i++)
-		        {
-		            PlayerTextDrawShow(playerid, WeeklyTaskTD[playerid][i]);
-		        }
-		        SelectTextDraw(playerid, COLOR_AQUA);
-		    }
-
-		    // Halimbawa gamitin ang id
-		    if(id != -1)
-		    {
-		        // gawin ang action gamit ang id, tulad ng inventory o selection
-		    }
+        if(GetPlayerState(playerid) == PLAYER_STATE_ONFOOT)
+        {
+            new id;
+            if(GetPVarType(playerid, "Tackling"))   {
+                CopGetUp(playerid);
+                ClearTackle(GetPVarInt(playerid, "Tackling"));
+                return 1;
+            }
+            if(IsPlayerInRangeOfPoint(playerid, 4.0, 2940.3108,-1467.3468,10.9137))  // LS
+            {
+                ShowDialogToPlayer(playerid, DIALOG_TIKISTORE);
+            }
+            if(IsPlayerInRangeOfPoint(playerid, 4.0, 2941.4414,-1457.9231,10.8645))  // LS
+            {
+                for( new i = 0; i < 37; i ++)
+                {
+                    PlayerTextDrawShow(playerid, WeeklyTaskTD[playerid][i]);
+                }
+                SelectTextDraw(playerid, COLOR_AQUA);
+            }
             #if defined HALLOWEEN
             if(IsPlayerInRangeOfPoint(playerid, 4.0, 952.4057,-2033.4866,8.0538))
             {
@@ -38012,7 +37973,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
         if(!response)
         {
             pAntiCheatSettingsPage{playerid} = 0;
-            return 1; // Закрываем диалог
+            return 1; // Ð—Ð°ÐºÑ€Ñ‹Ð²Ð°ÐµÐ¼ Ð´Ð¸Ð°Ð»Ð¾Ð³
         }
 
         if (!strcmp(inputtext, AC_DIALOG_NEXT_PAGE_TEXT))
@@ -38023,7 +37984,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
         {
             pAntiCheatSettingsPage{playerid}--;
         }
-        else // Если игрко выбрал какой-либо из кодов анти-чита
+        else // Ð•ÑÐ»Ð¸ Ð¸Ð³Ñ€ÐºÐ¾ Ð²Ñ‹Ð±Ñ€Ð°Ð» ÐºÐ°ÐºÐ¾Ð¹-Ð»Ð¸Ð±Ð¾ Ð¸Ð· ÐºÐ¾Ð´Ð¾Ð² Ð°Ð½Ñ‚Ð¸-Ñ‡Ð¸Ñ‚Ð°
         {
             pAntiCheatSettingsEditCodeId[playerid] = pAntiCheatSettingsMenuListData[playerid][listitem];
             return ShowPlayer_AntiCheatEditCode(playerid, pAntiCheatSettingsEditCodeId[playerid]);
@@ -38032,7 +37993,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
     }
     if(dialogid == ANTICHEAT_EDIT_CODE)
     {
-        if (!response) // Если игрок закрыл диалог
+        if (!response) // Ð•ÑÐ»Ð¸ Ð¸Ð³Ñ€Ð¾Ðº Ð·Ð°ÐºÑ€Ñ‹Ð» Ð´Ð¸Ð°Ð»Ð¾Ð³
         {
             pAntiCheatSettingsEditCodeId[playerid] = -1;
             return ShowPlayer_AntiCheatSettings(playerid);
@@ -38056,8 +38017,8 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
             listitem,
             item);
 
-        mysql_function_query(connectionID, sql_query, false, "", ""); // Отправляем запрос в базу данных
-        return ShowPlayer_AntiCheatSettings(playerid); // Показываем главное меню настроек анти-чита
+        mysql_function_query(connectionID, sql_query, false, "", ""); // ÐžÑ‚Ð¿Ñ€Ð°Ð²Ð»ÑÐµÐ¼ Ð·Ð°Ð¿Ñ€Ð¾Ñ Ð² Ð±Ð°Ð·Ñƒ Ð´Ð°Ð½Ð½Ñ‹Ñ…
+        return ShowPlayer_AntiCheatSettings(playerid); // ÐŸÐ¾ÐºÐ°Ð·Ñ‹Ð²Ð°ÐµÐ¼ Ð³Ð»Ð°Ð²Ð½Ð¾Ðµ Ð¼ÐµÐ½ÑŽ Ð½Ð°ÑÑ‚Ñ€Ð¾ÐµÐº Ð°Ð½Ñ‚Ð¸-Ñ‡Ð¸Ñ‚Ð°
     }
 
 
@@ -60589,7 +60550,7 @@ CMD:makeadmin(playerid, params[])
     if(level < 0 || level > 10)
         return SCM(playerid, COLOR_SYNTAX, "Invalid level. Valid levels range from 0 to 10.");
 
-    // Hierarchy check (bawal mag�set ng same o mas mataas)
+    // Hierarchy check (bawal magï¿½set ng same o mas mataas)
     if(level >= PlayerInfo[playerid][pAdmin] && !IsPlayerAdmin(playerid))
         return SCM(playerid, COLOR_SYNTAX, "You can only set admin levels lower than yours.");
 
@@ -70615,12 +70576,12 @@ CMD:d(playerid, params[])
 
 CMD:hitmarker(playerid)
 {
-    if(HitmarkerStatus(playerid) == false) // Узнаем состояние хитмаркера
+    if(HitmarkerStatus(playerid) == false) // Ð£Ð·Ð½Ð°ÐµÐ¼ ÑÐ¾ÑÑ‚Ð¾ÑÐ½Ð¸Ðµ Ñ…Ð¸Ñ‚Ð¼Ð°Ñ€ÐºÐµÑ€Ð°
     {
-        // Включаем хитмаркер
+        // Ð’ÐºÐ»ÑŽÑ‡Ð°ÐµÐ¼ Ñ…Ð¸Ñ‚Ð¼Ð°Ñ€ÐºÐµÑ€
         HitmarkerEnabled(playerid);
 
-        // Устанавливаем нужные цвета попадания
+        // Ð£ÑÑ‚Ð°Ð½Ð°Ð²Ð»Ð¸Ð²Ð°ÐµÐ¼ Ð½ÑƒÐ¶Ð½Ñ‹Ðµ Ñ†Ð²ÐµÑ‚Ð° Ð¿Ð¾Ð¿Ð°Ð´Ð°Ð½Ð¸Ñ
         HitmarkerColor(playerid, HITMARKER_BODYPART_TORSO,         0xFFFFFFFF);
         HitmarkerColor(playerid, HITMARKER_BODYPART_GROIN,         0x7CFC00FF);
         HitmarkerColor(playerid, HITMARKER_BODYPART_LEFT_ARM,     0xFFA500FF);
@@ -70632,20 +70593,20 @@ CMD:hitmarker(playerid)
         HitmarkerColor(playerid, HITMARKER_KILLSHOTS,             0xFF0000FF);
         HitmarkerColor(playerid, HITMARKER_VEHICLE_DAMAGE,         0xB03060FF);
 
-        // Включаем индикацию урона по транспорту
+        // Ð’ÐºÐ»ÑŽÑ‡Ð°ÐµÐ¼ Ð¸Ð½Ð´Ð¸ÐºÐ°Ñ†Ð¸ÑŽ ÑƒÑ€Ð¾Ð½Ð° Ð¿Ð¾ Ñ‚Ñ€Ð°Ð½ÑÐ¿Ð¾Ñ€Ñ‚Ñƒ
         HitmarkerEnableVehicleDamage(playerid, true);
 
-        // Отключаем индикацию урона оружием (ID: 5) - Бейсбольная бита
+        // ÐžÑ‚ÐºÐ»ÑŽÑ‡Ð°ÐµÐ¼ Ð¸Ð½Ð´Ð¸ÐºÐ°Ñ†Ð¸ÑŽ ÑƒÑ€Ð¾Ð½Ð° Ð¾Ñ€ÑƒÐ¶Ð¸ÐµÐ¼ (ID: 5) - Ð‘ÐµÐ¹ÑÐ±Ð¾Ð»ÑŒÐ½Ð°Ñ Ð±Ð¸Ñ‚Ð°
         HitmarkerDisableWeapon(playerid, WEAPON_BAT, true);
 
-        // Отключаем индикацию урона наносимого воздушным транспортом при помощи пулемета
+        // ÐžÑ‚ÐºÐ»ÑŽÑ‡Ð°ÐµÐ¼ Ð¸Ð½Ð´Ð¸ÐºÐ°Ñ†Ð¸ÑŽ ÑƒÑ€Ð¾Ð½Ð° Ð½Ð°Ð½Ð¾ÑÐ¸Ð¼Ð¾Ð³Ð¾ Ð²Ð¾Ð·Ð´ÑƒÑˆÐ½Ñ‹Ð¼ Ñ‚Ñ€Ð°Ð½ÑÐ¿Ð¾Ñ€Ñ‚Ð¾Ð¼ Ð¿Ñ€Ð¸ Ð¿Ð¾Ð¼Ð¾Ñ‰Ð¸ Ð¿ÑƒÐ»ÐµÐ¼ÐµÑ‚Ð°
         HitmarkerDisableWeapon(playerid, HITMARKER_AIR_VEHICLE_WEAPON_MINIGUN, true);
 
         GameTextForPlayer(playerid, "Hitmarker ~g~~h~On", 1200, 4);
     }
     else 
     {
-        // Выключаем хитмаркер
+        // Ð’Ñ‹ÐºÐ»ÑŽÑ‡Ð°ÐµÐ¼ Ñ…Ð¸Ñ‚Ð¼Ð°Ñ€ÐºÐµÑ€
         HitmarkerDisable(playerid);
         GameTextForPlayer(playerid, "Hitmarker ~r~~h~Off", 1200, 4);
     }
@@ -88503,6 +88464,15 @@ public OnInventoryAdd(playerid, itemid)
     }
     return itemid;
 }
+
+stock Inventory_WeaponRemove(playerid, item[])
+{
+    new
+        itemid = Inventory_GetItemID(playerid, item);    
+    Inventory_Remove(playerid, item, InventoryData[playerid][itemid][invQuantity])
+    return 0;
+}
+
 stock Inventory_Remove(playerid, item[], quantity = 1)
 {
     new
@@ -89768,27 +89738,72 @@ stock AddWeapontoInv(playerid, weapon[])
 
 stock GetWeaponInvName(weaponid)
 {
-    static name[32]; // static para valid pa rin pag return
-
+    new name[128];
     switch(weaponid)
     {
-        case 2:  strcpy(name, "Golf Club", sizeof(name));
-        case 4:  strcpy(name, "Knife", sizeof(name));
-        case 6:  strcpy(name, "Shovel", sizeof(name));
-        case 8:  strcpy(name, "Katana", sizeof(name));
-        case 22: strcpy(name, "Colt 45", sizeof(name));
-        case 24: strcpy(name, "Desert Eagle", sizeof(name));
-        case 25: strcpy(name, "Shotgun", sizeof(name));
-        case 28: strcpy(name, "Micro SMG", sizeof(name));
-        case 29: strcpy(name, "MP5", sizeof(name));
-        case 30: strcpy(name, "AK-47", sizeof(name));
-        case 32: strcpy(name, "Tec-9", sizeof(name));
-        case 33: strcpy(name, "Rifle", sizeof(name));
-        default: strcpy(name, "Unknown", sizeof(name));
+        case 2:
+        {            
+            strcpy(name, "Golf Club", 128);
+            return name;
+        }
+        case 4:
+        {           
+            strcpy(name, "Knife", 128);
+            return name;
+        }
+        case 6:
+        {
+            strcpy(name, "Shovel", 128);
+            return name;
+        }
+        case 8:
+        {
+            strcpy(name, "Katana", 128);
+            return name;
+        }
+        case 22:
+        {
+            strcpy(name, "Colt 45", 128);
+            return name;
+        }
+        case 24:
+        {
+            strcpy(name, "Desert Eagle", 128);
+            return name;
+        }
+        case 25:
+        {
+            strcpy(name, "Shotgun", 128);
+            return name;
+        }
+        case 28:
+        {
+            strcpy(name, "Micro SMG", 128);
+            return name;
+        }
+        case 29:
+        {
+            strcpy(name, "MP5", 128);
+            return name;
+        }
+        case 32:
+        {
+            strcpy(name, "Tec-9", 128);
+            return name;
+        }
+        case 30:
+        {
+            strcpy(name, "AK-47", 128);
+            return name;
+        }
+        case 33:
+        {
+            strcpy(name, "Rifle", 128);
+            return name;
+        }
     }
     return name;
 }
-
 
 stock EquipWeapon(playerid, weapon[])
 {
@@ -89808,7 +89823,7 @@ stock EquipWeapon(playerid, weapon[])
 
         GivePlayerWeaponEx(playerid, 2, 1);
 
-        Inventory_Remove(playerid, "Golf Club");
+        Inventory_WeaponRemove(playerid, "Golf Club");
         SendNearbyMessage(playerid, 30.0, COLOR_PURPLE, "** %s has equipped a Golf Club from their inventory.", GetRPName(playerid));
     }
     else if (!strcmp(weapon, "Knife", true))
@@ -89821,7 +89836,7 @@ stock EquipWeapon(playerid, weapon[])
 
         GivePlayerWeaponEx(playerid, 4, 1);
 
-        Inventory_Remove(playerid, "Knife");
+        Inventory_WeaponRemove(playerid, "Knife");
         SendNearbyMessage(playerid, 30.0, COLOR_PURPLE, "** %s has equipped a Knife from their inventory.", GetRPName(playerid));
     }
     else if (!strcmp(weapon, "Shovel", true))
@@ -89834,7 +89849,7 @@ stock EquipWeapon(playerid, weapon[])
 
         GivePlayerWeaponEx(playerid, 6, 1);
 
-        Inventory_Remove(playerid, "Shovel");
+        Inventory_WeaponRemove(playerid, "Shovel");
         SendNearbyMessage(playerid, 30.0, COLOR_PURPLE, "** %s has equipped a Shovel from their inventory.", GetRPName(playerid));
     }
     else if (!strcmp(weapon, "Katana", true))
@@ -89847,7 +89862,7 @@ stock EquipWeapon(playerid, weapon[])
 
         GivePlayerWeaponEx(playerid, 8, 1);
 
-        Inventory_Remove(playerid, "Katana");
+        Inventory_WeaponRemove(playerid, "Katana");
         SendNearbyMessage(playerid, 30.0, COLOR_PURPLE, "** %s has equipped a Katana from their inventory.", GetRPName(playerid));
     }
     if (!strcmp(weapon, "Colt 45", true))
@@ -89859,7 +89874,7 @@ stock EquipWeapon(playerid, weapon[])
             return SendErrorMessage(playerid, "You already have this weapon.");
 
         GivePlayerWeaponEx(playerid, 22, 50);
-        Inventory_Remove(playerid, "Colt 45");
+        Inventory_WeaponRemove(playerid, "Colt 45");
         SendNearbyMessage(playerid, 30.0, COLOR_PURPLE, "** %s takes out an Colt 45 and holds it.", GetRPName(playerid));
 
     }
@@ -89888,7 +89903,7 @@ stock EquipWeapon(playerid, weapon[])
             return SendErrorMessage(playerid, "You already have this weapon.");
 
         GivePlayerWeaponEx(playerid, 25, 50);
-        Inventory_Remove(playerid, "Shotgun");
+        Inventory_WeaponRemove(playerid, "Shotgun");
         SendNearbyMessage(playerid, 30.0, COLOR_PURPLE, "** %s takes out an Shotgun and holds it.", GetRPName(playerid));
 
     }
@@ -89901,7 +89916,7 @@ stock EquipWeapon(playerid, weapon[])
             return SendErrorMessage(playerid, "You already have this weapon.");
 
         GivePlayerWeaponEx(playerid, 28, 250);
-        Inventory_Remove(playerid, "Micro SMG");
+        Inventory_WeaponRemove(playerid, "Micro SMG");
         SendNearbyMessage(playerid, 30.0, COLOR_PURPLE, "** %s takes out an Micro SMG and holds it.", GetRPName(playerid));
 
     }
@@ -89914,7 +89929,7 @@ stock EquipWeapon(playerid, weapon[])
             return SendErrorMessage(playerid, "You already have this weapon.");
 
         GivePlayerWeaponEx(playerid, 29, 250);
-        Inventory_Remove(playerid, "Mp5");
+        Inventory_WeaponRemove(playerid, "Mp5");
         SendNearbyMessage(playerid, 30.0, COLOR_PURPLE, "** %s takes out an Mp5 and holds it.", GetRPName(playerid));
 
     }
@@ -89927,7 +89942,7 @@ stock EquipWeapon(playerid, weapon[])
             return SendErrorMessage(playerid, "You already have this weapon.");
 
         GivePlayerWeaponEx(playerid, 32, 250);
-        Inventory_Remove(playerid, "Tec-9");
+        Inventory_WeaponRemove(playerid, "Tec-9");
         SendNearbyMessage(playerid, 30.0, COLOR_PURPLE, "** %s takes out an Tec-9 and holds it.", GetRPName(playerid));
 
     }
@@ -89940,7 +89955,7 @@ stock EquipWeapon(playerid, weapon[])
             return SendErrorMessage(playerid, "You already have this weapon.");
 
         GivePlayerWeaponEx(playerid, 30, 250);
-        Inventory_Remove(playerid, "AK-47");
+        Inventory_WeaponRemove(playerid, "AK-47");
         SendNearbyMessage(playerid, 30.0, COLOR_PURPLE, "** %s takes out an AK-47 and holds it.", GetRPName(playerid));
 
     }
@@ -89953,7 +89968,7 @@ stock EquipWeapon(playerid, weapon[])
             return SendErrorMessage(playerid, "You already have this weapon.");
 
         GivePlayerWeaponEx(playerid, 33, 50);
-        Inventory_Remove(playerid, "Rifle");
+        Inventory_WeaponRemove(playerid, "Rifle");
         SendNearbyMessage(playerid, 30.0, COLOR_PURPLE, "** %s takes out an Rifle and holds it.", GetRPName(playerid));
     }
     return 1;
@@ -95361,7 +95376,7 @@ public UploadAntiCheat()
     }
 
     new mes[128];
-    format(mes, sizeof(mes), "[ANTICHEAT]: Anti-cheat settings loaded successfully (loaded: %i). Time: %i мс.", rows, GetTickCount() - tick);
+    format(mes, sizeof(mes), "[ANTICHEAT]: Anti-cheat settings loaded successfully (loaded: %i). Time: %i Ð¼Ñ.", rows, GetTickCount() - tick);
     print(mes);
 
     return 1;
@@ -95509,7 +95524,7 @@ stock ShowPlayer_AntiCheatEditCode(playerid, code)
         dialog_header[22 - 4 + AC_MAX_CODE_LENGTH + AC_MAX_CODE_NAME_LENGTH],
         dialog_string[AC_MAX_TRIGGER_TYPE_NAME_LENGTH*AC_MAX_TRIGGER_TYPES];
 
-    format(dialog_header, sizeof(dialog_header), "Code: %s | Name: %s", AC_CODE[code], AC_CODE_NAME[code]); //Название
+    format(dialog_header, sizeof(dialog_header), "Code: %s | Name: %s", AC_CODE[code], AC_CODE_NAME[code]); //ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ
 
     for(new i = 0; i < AC_MAX_TRIGGER_TYPES; i++)
     {
