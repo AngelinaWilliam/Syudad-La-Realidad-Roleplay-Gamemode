@@ -1,6 +1,6 @@
 /*
 																// --- Server Information --- //
-																One City Roleplay
+																Syudad La Realidad Roleplay
 																Developer: FinnSilva
                                                           ---------------------------------------
 
@@ -50,11 +50,11 @@
 #define SERVER_BOT       "GabSiraulo BOT"
 #define VERSION          "1.0(a)"
 #define REVISION         "OC:RP "VERSION""
-#define SERVER_NAME      "One City Roleplay"
+#define SERVER_NAME      "Syudad La Realidad"
 #define SERVER_DIALOG    "{EC7063}"SERVER_NAME" "WHITE""VERSION""
 #define SERVER_URL       "https://discord.gg/g4fqHyzxMh"
 
-#define SERVER_NAME "One City Roleplay"
+#define SERVER_NAME "Syudad La Realidad"
 #define DIALOG_TP 1234 // example, siguraduhing unique ang ID
 
 #define SERVER_MUSIC_URL ""SERVER_URL"/music"
@@ -183,7 +183,7 @@ new SelectedItem;
 new Float:tempDamage;
 
 new PlayerInSafezone[MAX_PLAYERS]; // player-based tracker
-new ServerName[64] = "Default Roleplay"; // default value
+new ServerName[64] = "Syudad La Realidad"; // default value
 
 //#define MAX_INVENTORY 20
 
@@ -199,6 +199,7 @@ new Text:MODELTD[MAX_INVENTORY];
 new Text:AMOUNTTD[MAX_INVENTORY];
 new BukaInven[MAX_PLAYERS];
 new PlayerText: D_DROPTD[MAX_PLAYERS][28];
+new bool:Inventory_Open[MAX_PLAYERS];
 
 #define MAX_DYNAMICDROPS             1000
 
@@ -6631,12 +6632,15 @@ public OnPlayerUseItem(playerid, itemid, name[])
 {
     if (!strcmp(name, "Medkit", true)) {
         callcmd::use(playerid, "medkit");
+        Inventory_Remove(playerid, "Medkit");
     }
     else if (!strcmp(name, "Vest", true)) {
         callcmd::use(playerid, "vest");
+        Inventory_Remove(playerid, "Vest");
     }
     else if (!strcmp(name, "Cigar", true)) {
         callcmd::use(playerid, "cigar");
+        Inventory_Remove(playerid, "Cigar");
     }
     else if (!strcmp(name, "Cellphone", true)) {
         callcmd::phone(playerid, "\1");
@@ -6655,6 +6659,7 @@ public OnPlayerUseItem(playerid, itemid, name[])
     }
     else if (!strcmp(name, "Toolkit", true)) {
         callcmd::hotwire(playerid, "\1");
+        Inventory_Remove(playerid, "Toolkit");
     }
     else if (!strcmp(name, "Flashlight", true)) {
         callcmd::flashlight(playerid, "\1");
@@ -6664,9 +6669,11 @@ public OnPlayerUseItem(playerid, itemid, name[])
     }
     else if (!strcmp(name, "Soda", true)) {
         callcmd::drink(playerid, "\1");
+        Inventory_Remove(playerid, "Soda");
     }
     else if (!strcmp(name, "Burger", true)) {
         callcmd::eat(playerid, "\1");
+        Inventory_Remove(playerid, "Burger");
     }
     else if (!strcmp(name, "Ammo Cartridge", true))
     {
@@ -6699,43 +6706,59 @@ public OnPlayerUseItem(playerid, itemid, name[])
     }
     else if (!strcmp(name, "Colt 45", true)) {
         EquipWeapon(playerid, "Colt 45");
+        Inventory_Update(playerid); // refresh para mawala sa UI agad
+        Inventory_Remove(playerid, "Colt 45");
     }
     else if (!strcmp(name, "Desert Eagle", true)) {
         EquipWeapon(playerid, "Desert Eagle");
+        Inventory_Remove(playerid, "Desert Eagle");
     }
     else if (!strcmp(name, "Shotgun", true)) {
         EquipWeapon(playerid, "Shotgun");
+        Inventory_Remove(playerid, "Shotgun");
     }
     else if (!strcmp(name, "Micro SMG", true)) {
         EquipWeapon(playerid, "Micro SMG");
+        Inventory_Remove(playerid, "Micro SMG");
     }
     else if (!strcmp(name, "Tec-9", true)) {
         EquipWeapon(playerid, "Tec-9");
+        Inventory_Remove(playerid, "Tec-9");
     }
     else if (!strcmp(name, "MP5", true)) {
         EquipWeapon(playerid, "MP5");
+        Inventory_Remove(playerid, "MP5");
     }
     else if (!strcmp(name, "AK-47", true)) {
         EquipWeapon(playerid, "AK-47");
+        Inventory_Remove(playerid, "AK-47");
     }
     else if (!strcmp(name, "Rifle", true)) {
         EquipWeapon(playerid, "Rifle");
+        Inventory_Remove(playerid, "Rifle");
     }
     else if (!strcmp(name, "Golf Club", true)) {
         EquipWeapon(playerid, "Golf Club");
+        Inventory_Remove(playerid, "Golf Club");
     }
     else if (!strcmp(name, "Knife", true)) {
         EquipWeapon(playerid, "Knife");
+        Inventory_Remove(playerid, "Knife");
     }
     else if (!strcmp(name, "Shovel", true)) {
         EquipWeapon(playerid, "Shovel");
+        Inventory_Remove(playerid, "Shovel");
     }
     else if (!strcmp(name, "Katana", true)) {
         EquipWeapon(playerid, "Katana");
+        Inventory_Remove(playerid, "Katana");
     }
+    // refresh UI
     showitembox(playerid, name, "USE", itemid, 4);
     Inventory_Update(playerid);
-	Inventory_Close(playerid);
+    Inventory_Close(playerid);
+    Inventory_Update(playerid);
+
     return 1;
 }
 
@@ -11604,11 +11627,21 @@ stock Inventory_SetQuantity(playerid, item[], quantity, totalquantity)
 
 stock Inventory_WeaponRemove(playerid, item[])
 {
-    new
-        itemid = Inventory_GetItemID(playerid, item);    
-    Inventory_Remove(playerid, item, InventoryData[playerid][itemid][invQuantity]);
+    new itemid = Inventory_GetItemID(playerid, item);
+    if(itemid != -1)
+    {
+        InventoryData[playerid][itemid][invExists] = false;
+        InventoryData[playerid][itemid][invModel] = 0;
+        strpack(InventoryData[playerid][itemid][invItem], "", 48);
+        InventoryData[playerid][itemid][invQuantity] = 0;
+
+        Inventory_Show(playerid);
+        printf("[DEBUG] Removed %s from slot %d of %s", item, itemid, PlayerName(playerid));
+        return 1;
+    }
     return 0;
 }
+
 
 stock Inventory_Remove(playerid, item[], quantity = 1)
 {
@@ -22470,7 +22503,7 @@ public OnQueryFinished(threadid, extraid)
 
                         if(PlayerInfo[extraid][pAdmin])
                         {
-                            SAM(COLOR_GREEN, "[Admin Online]"WHITE" %s %s has logged in (playing on %s).", GetAdminRank(extraid), GetRPName(extraid), "One City");
+                            SAM(COLOR_GREEN, "[Admin Online]"WHITE" %s %s has logged in (playing on %s).", GetAdminRank(extraid), GetRPName(extraid), "Syudad La Realidad");
                         }
 
                         
@@ -24597,7 +24630,40 @@ public OnPlayerClickTextDraw(playerid, Text:clickedid)
 	else if(clickedid == INVINFO[11])
 	{
 		AddWeapontoInv(playerid, GetWeaponInvName(GetPlayerWeapon(playerid)));
-	}		
+	}
+	else if(clickedid == INVINFO[12]) // custom button for "Take Out"
+	{
+	    new id = PlayerInfo[playerid][pSelectItem];
+	    if(id == -1)
+	    {
+	        SendClientMessage(playerid, COLOR_YELLOW, "Select an item first");
+	        return 1;
+	    }
+
+	    if(InventoryData[playerid][id][invExists])
+	    {
+	        new string[64];
+	        strunpack(string, InventoryData[playerid][id][invItem]);
+
+	        new weaponid = GetWeaponIDFromInvName(string); // stock natin
+	        if(weaponid > 0)
+	        {
+	            GivePlayerWeapon(playerid, weaponid, 999); // bigay weapon
+
+	            // tanggalin sa data
+	            InventoryData[playerid][id][invExists] = false;
+	            InventoryData[playerid][id][invModel] = 0;
+	            strpack(InventoryData[playerid][id][invItem], "", 48);
+
+	            Inventory_Show(playerid); // dito auto-hide/update UI na
+	            SendClientMessage(playerid, COLOR_GREEN, "You took out your weapon from inventory.");
+	        }
+	    }
+	    else
+	    {
+	        SendClientMessage(playerid, COLOR_YELLOW, "This slot is empty.");
+	    }
+	}
 	else if(clickedid == INVINFO[4])
 	{
 		new str[1024], id = PlayerInfo[playerid][pSelectItem], count = 0;
@@ -24642,7 +24708,14 @@ public OnPlayerClickTextDraw(playerid, Text:clickedid)
 	{
 		ShowPlayerDialog(playerid, DIALOG_AMOUNT, DIALOG_STYLE_INPUT, "Inventory - Amount", "ENTER THE AMOUNT:", "Yes", "No");
 	}
-	
+    if(clickedid == INVALID_TEXT_DRAW) // kapag ESC pinindot
+    {
+        if(BukaInven[playerid] == 1) // naka-open ba inventory?
+        {
+            Inventory_Close(playerid); // isara agad
+            return 1;
+        }
+    }
     if (PlayerInfo[playerid][pIgnoreTD])
     {
         PlayerInfo[playerid][pIgnoreTD] = 0;
@@ -25300,7 +25373,7 @@ public OnPlayerConnect(playerid)
     else if (!SvHasMicro(playerid)) SendClientMessage(playerid, COLOR_WHITE, "You're holding an old version of the plugin, possibly incompatiable. update it.");
     else if ((lstream[playerid] = SvCreateDLStreamAtPlayer(20.0, SV_INFINITY, playerid, 0x6E6E6EFF, "Normal")))
     {
-        SendClientMessage(playerid, COLOR_LIGHTGREEN, "Welcome to One City Roleplay!!");
+        SendClientMessage(playerid, COLOR_LIGHTGREEN, "Welcome to Syudad La Realidad!!");
         SendClientMessage(playerid, COLOR_LIGHTGREEN, "Head Management Rain");
         SendClientMessage(playerid, COLOR_LIGHTGREEN, "[Voice Chat] Connected B/Z/R for PC");
         if (gstream) SvAttachListenerToStream(gstream, playerid);
@@ -66434,7 +66507,7 @@ CMD:stats(playerid, params[])
  
 
 CMD:toggc(playerid) return callcmd::tog(playerid, "global");
-CMD:inv(playerid, params[]) return callcmd::inventory(playerid, params);
+CMD:i(playerid, params[]) return callcmd::inventory(playerid, params);
 CMD:inventory(playerid, params[])
 {
     Inventory_Update(playerid);
@@ -89735,6 +89808,22 @@ stock AddWeapontoInv(playerid, weapon[])
     }
     return 1;
 }
+stock GetWeaponIDFromInvName(name[])
+{
+    if(!strcmp(name, "Golf Club", true)) return 2;
+    if(!strcmp(name, "Knife", true)) return 4;
+    if(!strcmp(name, "Shovel", true)) return 6;
+    if(!strcmp(name, "Katana", true)) return 8;
+    if(!strcmp(name, "Colt 45", true)) return 22;
+    if(!strcmp(name, "Desert Eagle", true)) return 24;
+    if(!strcmp(name, "Shotgun", true)) return 25;
+    if(!strcmp(name, "Micro SMG", true)) return 28;
+    if(!strcmp(name, "MP5", true)) return 29;
+    if(!strcmp(name, "Tec-9", true)) return 32;
+    if(!strcmp(name, "AK-47", true)) return 30;
+    if(!strcmp(name, "Rifle", true)) return 33;
+    return 0;
+}
 
 stock GetWeaponInvName(weaponid)
 {
@@ -89742,12 +89831,12 @@ stock GetWeaponInvName(weaponid)
     switch(weaponid)
     {
         case 2:
-        {            
+        {
             strcpy(name, "Golf Club", 128);
             return name;
         }
         case 4:
-        {           
+        {
             strcpy(name, "Knife", 128);
             return name;
         }
